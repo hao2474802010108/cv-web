@@ -1,0 +1,418 @@
+
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --pink-light: #f9dde0;
+      --pink-mid:   #f0b8be;
+      --pink-dark:  #e8929a;
+      --pink-accent:#d4636d;
+      --text-dark:  #3a2a2c;
+      --text-mid:   #6b4c50;
+      --text-soft:  #9e7479;
+      --white:      #ffffff;
+      --sidebar-w:  220px;
+    }
+ 
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #f5e6e8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+ 
+    /* ===== CV WRAPPER ===== */
+    .cv {
+      width: 700px;
+      min-height: 960px;
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(180,80,90,.18);
+    }
+ 
+    /* ========================================
+       [PHẦN 1] HEADER – Tên & Chức danh
+       ======================================== */
+    .cv__header {
+      background: var(--pink-light);
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 30px 36px 24px;
+      position: relative;
+    }
+ 
+    /* --- [PHẦN 1A] Ảnh đại diện --- */
+    .cv__avatar-wrap {
+      flex-shrink: 0;
+    }
+    .cv__avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--pink-dark);
+
+    }
+    .cv__avatar-placeholder {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--pink-mid);
+      border: 4px solid var(--pink-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-mid);
+      text-align: center;
+      line-height: 1.4;
+    }
+ 
+    /* --- [PHẦN 1B] Tên & Chức danh --- */
+    .cv__name-block { flex: 1; }
+    .cv__name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: .5px;
+      line-height: 1.2;
+
+    }
+    .cv__title {
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--pink-accent);
+      letter-spacing: 1px;
+
+    }
+ 
+    /* ========================================
+       [PHẦN 2] BODY – 2 cột
+       ======================================== */
+    .cv__body {
+      display: flex;
+      flex: 1;
+    }
+ 
+    /* ========================================
+       [PHẦN 3] CỘT TRÁI – Sidebar
+       ======================================== */
+    .cv__sidebar {
+      width: var(--sidebar-w);
+      background: var(--pink-light);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      flex-shrink: 0;
+    }
+ 
+    .sidebar-section__title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--pink-accent);
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+ 
+    /* --- [PHẦN 3A] Thông tin sinh viên --- */
+    .sidebar__school {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+
+    }
+    .sidebar__school-detail {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.6;
+
+    }
+ 
+    /* --- [PHẦN 3B] Sở thích --- */
+    .sidebar__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .sidebar__list li {
+      font-size: 12.5px;
+      color: var(--text-mid);
+      padding-left: 14px;
+      position: relative;
+    }
+    .sidebar__list li::before {
+      content: '♡';
+      position: absolute;
+      left: 0;
+      color: var(--pink-dark);
+      font-size: 10px;
+      top: 1px;
+    }
+ 
+    /* --- [PHẦN 3C] Ngôn ngữ --- */
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--text-mid);
+      margin-bottom: 5px;
+    }
+    .lang-flag {
+      font-size: 18px;
+      /* Dùng emoji cờ quốc gia */
+    }
+ 
+    /* --- [PHẦN 3D] Liên hệ --- */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-bottom: 7px;
+      line-height: 1.4;
+  
+    }
+    .contact-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: var(--pink-accent);
+      margin-top: 1px;
+    }
+ 
+    /* ========================================
+       [PHẦN 4] CỘT PHẢI – Main content
+       ======================================== */
+    .cv__main {
+      flex: 1;
+      padding: 28px 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+ 
+    .main-section__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--pink-accent);
+      border-bottom: 2px solid var(--pink-light);
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      letter-spacing: .3px;
+    }
+ 
+    /* --- [PHẦN 4A] Giới thiệu bản thân --- */
+    .intro-text {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.75;
+
+    }
+ 
+    /* --- [PHẦN 4B] Kỹ năng --- */
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .skills-list li {
+      font-size: 13px;
+      color: var(--text-mid);
+      padding-left: 16px;
+      position: relative;
+    }
+    .skills-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--pink-accent);
+    }
+ 
+    /* --- [PHẦN 4C] Công cụ --- */
+    .tools-wrap {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .tool-badge {
+      background: var(--pink-light);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: .3px;
+ 
+    }
+    /* Logo màu đặc trưng */
+    .tool-badge.canva  { color: #00c4cc; }
+    .tool-badge.excel  { color: #1d7044; }
+    .tool-badge.word   { color: #2b579a; }
+ 
+    /* ========================================
+       PRINT
+       ======================================== */
+    @media print {
+      body { background: none; padding: 0; }
+      .cv  { box-shadow: none; border-radius: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+ 
+<article class="cv">
+ 
+
+       [PHẦN 1] HEADER
+
+  <header class="cv__header">
+ 
+    <!-- [PHẦN 1A] ẢNH ĐẠI DIỆN -->
+    <div class="cv__avatar-wrap">
+  <img class="cv__avatar" src="DSCF4845.JPG" alt="Ảnh đại diện">
+</div>
+      <!--
+        CÁCH 1 – Dùng file ảnh:
+        <img class="cv__avatar" src="anh-cua-ban.jpg" alt="Ảnh đại diện"/>
+    <!-- [PHẦN 1B] TÊN & CHỨC DANH -->
+    <div class="cv__name-block">
+      <h1 class="cv__name">NGUYỄN HỮU HẠO</h1>        
+      <p  class="cv__title"> Ngành Công Nghệ Thông Tin</p>  
+    </div>
+ 
+  </header>
+ 
+
+       [PHẦN 2] BODY
+
+  <div class="cv__body">
+ 
+
+         [PHẦN 3] CỘT TRÁI – SIDEBAR
+
+    <aside class="cv__sidebar">
+ 
+      <!-- [PHẦN 3A] THÔNG TIN HỌC VẤN -->
+      <section>
+        <span class="sidebar-section__title">🎓 Học vấn</span>
+        <p class="sidebar__school">TRƯỜNG ĐẠI HỌC VĂN LANG</p>  
+        <p class="sidebar__school-detail">
+          Năm học: 2024 – 2025<br/>    
+          GPA năm X: 3.2/4.0         
+        </p>
+      </section>
+ 
+      <!-- [PHẦN 3B] SỞ THÍCH -->
+      <section>
+        <span class="sidebar-section__title">💛 Sở thích</span>
+        <ul class="sidebar__list">
+          <li>Học</li> 
+          <li>Thể Thao</li> 
+          <li>Xem phim</li> 
+      </section>
+ 
+      <!-- [PHẦN 3C] NGÔN NGỮ -->
+      <section>
+        <span class="sidebar-section__title">🌐 Ngôn ngữ</span>
+        <div class="lang-item">
+          <span class="lang-flag">🇬🇧</span> Tiếng Anh 
+        </div>
+      </section>
+ 
+      <!-- [PHẦN 3D] LIÊN HỆ -->
+      <section>
+        <span class="sidebar-section__title">📬 Liên hệ</span>
+        <!-- Số điện thoại -->
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2
+              1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3
+              6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2
+              1L6.6 10.8z"/>
+          </svg>
+          +84 971542606  
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1
+              0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          hao.2474802010108@vlu.vn  
+        </div>
+        <!-- Địa chỉ -->
+        <div class="contact-item">
+          <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75
+              7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62
+              6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+          </svg>
+          TP.HCM            
+        </div>
+      </section>
+    </aside>
+         [PHẦN 4] CỘT PHẢI – NỘI DUNG CHÍNH
+    <main class="cv__main">
+      
+      <!-- [PHẦN 4A] GIỚI THIỆU BẢN THÂN -->
+      <section>
+        <h2 class="main-section__title">GIỚI THIỆU</h2>
+        <p class="intro-text">
+          Xin chào! Tôi là Nguyễn Hữu Hạo. Tôi đang theo học Công nghệ thông tin
+          tại Văn Lang. Tôi luôn cố gắng xây dựng kiến thức
+          và tích lũy kinh nghiệm thực tế. Rất mong được học hỏi và
+          đóng góp cho công ty.
+        </p>
+      </section>
+      <!-- [PHẦN 4B] KỸ NĂNG -->
+      <section>
+        <h2 class="main-section__title">KỸ NĂNG</h2>
+        <ul class="skills-list">
+          <li>Python nâng cao </li> 
+        </ul>
+      </section>
+      <!-- [PHẦN 4C] CÔNG CỤ -->
+      <section>
+        <h2 class="main-section__title">CÔNG CỤ</h2>
+        <div class="tools-wrap">
+          <span class="tool-badge canva">Photoshop</span>  
+          <span class="tool-badge excel">MOS</span>   
+          <span class="tool-badge word">GitHub</span> 
+          <span class="tool-badge word">After Affect</span>    
+          <!-- Thêm badge nếu cần: <span class="tool-badge">Tên công cụ</span> -->
+        </div>
+      </section>
+    </main>
+  </div><!-- end .cv__body -->
+</article>
+</body>
+</html>
